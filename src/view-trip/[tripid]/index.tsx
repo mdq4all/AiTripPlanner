@@ -46,7 +46,7 @@ const TripPage = () => {
                 <PlacesToVisit trip={trip} />
             </div>
             {/* Footer */}
-            <Footer trip={trip} />
+            <Footer />
         </div>
     )
 }
