@@ -32,7 +32,7 @@ const HotelCard = ({hotel} : {hotel: Hotel}) => {
     <div>
         <h2 className="font-bold mb-2">{hotel.name}</h2>
         <h2 className="flex items-center gap-2 text-gray-500 text-xs"><CiLocationOn size={16} />{hotel.address}</h2>
-        <h2 className="text-sm flex items-center gap-2"> <GrMoney />$ {hotel.price} per night</h2>
+        <h2 className="text-sm flex items-center gap-2"> <GrMoney />$ {hotel.price.min} - {hotel.price.max} per night</h2>
         <h2 className="flex items-center gap-2"><RiStarSmileLine />{hotel.rating}</h2>
     </div>
 </Link>

@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import GooglePlacesAutocomplete from "react-google-places-autocomplete"
 import { ai_prompt, selectBudgetOption, selectTraverlList } from "../constants/options";
 import { formTrip, TokenInfo } from "../types";
-import { chatSession } from '../service/AiModal.js'
+import { chatSession } from '../service/AiModal.ts'
 import { FcGoogle } from "react-icons/fc"
 import { useGoogleLogin } from "@react-oauth/google";
 import axios from "axios";

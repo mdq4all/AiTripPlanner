@@ -17,7 +17,10 @@ export interface Trip {
 export interface Hotel {
     name: string;         // Nombre del hotel
     address: string;      // Dirección del hotel
-    price: number;       // Precio por noche para 3 personas
+    price: {
+        max: number;
+        min: number;
+    };       // Precio por noche 
     imageUrl: string;     // URL de la imagen del hotel
     website: string;      // URL del sitio web del hotel
     coordinates: string;  // Coordenadas geográficas del hotel
