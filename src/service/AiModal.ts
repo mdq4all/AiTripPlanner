@@ -1,20 +1,22 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-// import { GoogleAIFileManager } from "@google/generative-ai/server";
+import { GoogleAIFileManager } from "@google/generative-ai/server";
 
   
   const apiKey = import.meta.env.VITE_GOOGLE_GEMINI_AI_API_KEY;
   const genAI = new GoogleGenerativeAI(apiKey);
-  // const fileManager = new GoogleAIFileManager(apiKey);
+  const fileManager = new GoogleAIFileManager(apiKey);
   
-  //   async function uploadToGemini(path, mimeType) {
-  //   const uploadResult = await fileManager.uploadFile(path, {
-  //     mimeType,
-  //     displayName: path,
-  //   });
-  //   const file = uploadResult.file;
-  //   console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
-  //   return file;
-  // }
+    async function uploadToGemini(path: string, mimeType: string) {
+    const uploadResult = await fileManager.uploadFile(path, {
+      mimeType,
+      displayName: path,
+    });
+    const file = uploadResult.file;
+    console.log(`Uploaded file ${file.displayName} as: ${file.name}`);
+    return file;
+  }
+
+  console.log('Archivo subido exitosamente:', uploadToGemini);
   
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
